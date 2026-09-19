@@ -1,0 +1,50 @@
+{
+  "name": "openllm-orchestrator",
+  "displayName": "OpenLLM Orchestrator",
+  "version": "0.1.0",
+  "description": "Let Grok Bot or any Cursor agent orchestrate OpenLLM for dashboard ops and real development tasks — models and gateway MCP in, GitHub/Vercel still yours.",
+  "author": {
+    "name": "MindDragonLabs"
+  },
+  "publisher": "MindDragonLabs",
+  "homepage": "https://github.com/MindDragonLabs/grok-openllm-orchestrator",
+  "repository": "https://github.com/MindDragonLabs/grok-openllm-orchestrator",
+  "license": "MIT",
+  "keywords": [
+    "openllm",
+    "grok-bot",
+    "mcp",
+    "orchestrator",
+    "gateway"
+  ],
+  "category": "agent-orchestration",
+  "tags": [
+    "mcp",
+    "openllm",
+    "grok-bot",
+    "orchestrator",
+    "gateway",
+    "model-routing"
+  ],
+  "logo": "assets/logo.svg",
+  "skills": "skills",
+  "rules": "rules",
+  "commands": "commands",
+  "variables": {
+    "type": "object",
+    "properties": {
+      "OPENLLM_API_KEY": {
+        "type": "string",
+        "title": "OpenLLM API key",
+        "description": "sk-llm / API key from the openllm.sh dashboard. Used only as ${OPENLLM_API_KEY} in mcp.json. Never commit the value."
+      },
+      "OPENLLM_CLOUD_ORIGIN": {
+        "type": "string",
+        "title": "OpenLLM cloud origin",
+        "description": "Gateway origin the OpenLLM CLI MCP server talks to. Override only for a self-hosted or non-default origin.",
+        "default": "https://openllm.sh"
+      }
+    },
+    "required": ["OPENLLM_API_KEY"]
+  }
+}
